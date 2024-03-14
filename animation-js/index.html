@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alphabet Animation</title>
+<style>
+    body {
+        background-color: #eff7ff; /* Soft blue background color */
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .letter-container {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 5px solid #ff6f61;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 80px;
+        color: #2c3e50; /* Darker color for letters */
+        cursor: pointer;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        background-image: linear-gradient(45deg, #ff9d6c, #ff6f61); /* Gradient background */
+        margin: 10px;
+        transition: transform 0.5s ease;
+    }
+
+    /* Animation for bouncing effect */
+    .bounce-animation {
+        animation: bounce 1s infinite alternate;
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="row">
+    <div class="letter-container" onclick="playAudioAndAnimate('a.m4a', this)">A</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('b.m4a', this)">B</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('c.m4a', this)">C</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('d.m4a', this)">D</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('e.m4a', this)">E</div>
+</div>
+
+<div class="row">
+    <!-- Add more letter containers for the remaining letters -->
+</div>
+
+<audio id="audio"></audio>
+
+<script>
+function playAudioAndAnimate(soundFile, element) {
+    var audio = document.getElementById("audio");
+    audio.src = soundFile;
+    audio.play();
+
+    // Stop bounce animation from all letter containers
+    var letterContainers = document.querySelectorAll('.letter-container');
+    letterContainers.forEach(function(container) {
+        container.classList.remove('bounce-animation');
+    });
+
+    // Add bounce animation to the clicked letter container
+    element.classList.add('bounce-animation');
+
+    // Stop bounce animation after sound finishes playing
+    audio.onended = function() {
+        element.classList.remove('bounce-animation');
+    };
+}
+</script>
+
+</body>
+</html>
