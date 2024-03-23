@@ -12,12 +12,13 @@
     .row {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .letter-container {
         position: relative;
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
         border: 5px solid #ff6f61;
         display: flex;
@@ -27,9 +28,24 @@
         color: #2c3e50; /* Darker color for letters */
         cursor: pointer;
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-        background-image: linear-gradient(45deg, #ff9d6c, #ff6f61); /* Gradient background */
+        background-color: linear-gradient(45deg, #ff9d6c, #ff6f61); /* Gradient background */
         margin: 10px;
         transition: transform 0.5s ease;
+    }
+
+    .letter-container:nth-child(odd) {
+        background-color: #ffadad;
+    }
+
+    .letter-container:nth-child(even) {
+        background-color: #ffd6a5;
+    }
+
+    /* CSS for smaller screens */
+    @media screen and (max-width: 600px) {
+        .letter-container {
+            width: 50%; /* Assuming you want 2 letters in a row on smaller screens */
+        }
     }
 
     /* Animation for bouncing effect */
@@ -50,15 +66,50 @@
 <body>
 
 <div class="row">
-    <div class="letter-container" onclick="playAudioAndAnimate('a.m4a', this)">A</div>
-    <div class="letter-container" onclick="playAudioAndAnimate('b.m4a', this)">B</div>
-    <div class="letter-container" onclick="playAudioAndAnimate('c.m4a', this)">C</div>
-    <div class="letter-container" onclick="playAudioAndAnimate('d.m4a', this)">D</div>
-    <div class="letter-container" onclick="playAudioAndAnimate('e.m4a', this)">E</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('A.mp4', this)">A</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('B.mp4', this)">B</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('C.mp4', this)">C</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('D.mp4', this)">D</div>
 </div>
 
 <div class="row">
-    <!-- Add more letter containers for the remaining letters -->
+    <div class="letter-container" onclick="playAudioAndAnimate('E.mp4', this)">E</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('F.mp4', this)">F</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('G.mp4', this)">G</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('H.mp4', this)">H</div>
+</div>
+
+<div class="row">
+    <div class="letter-container" onclick="playAudioAndAnimate('I.mp4', this)">I</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('J.mp4', this)">J</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('K.mp4', this)">K</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('L.mp4', this)">L</div>
+</div>
+
+<div class="row">
+    <div class="letter-container" onclick="playAudioAndAnimate('M.mp4', this)">M</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('N.mp4', this)">N</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('O.mp4', this)">O</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('P.mp4', this)">P</div>
+</div>
+
+<div class="row">
+    <div class="letter-container" onclick="playAudioAndAnimate('Q.mp4', this)">Q</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('R.mp4', this)">R</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('S.mp4', this)">S</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('T.mp4', this)">T</div>
+</div>
+
+<div class="row">
+    <div class="letter-container" onclick="playAudioAndAnimate('U.mp4', this)">U</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('V.mp4', this)">V</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('W.mp4', this)">W</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('X.mp4', this)">X</div>
+</div>
+
+<div class="row">
+    <div class="letter-container" onclick="playAudioAndAnimate('Y.mp4', this)">Y</div>
+    <div class="letter-container" onclick="playAudioAndAnimate('Z.mp4', this)">Z</div>
 </div>
 
 <audio id="audio"></audio>
