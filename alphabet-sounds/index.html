@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabet Animation</title>
+    <style>
+        body {
+            background-color: #85a3c0;
+            /* Soft blue background color */
+        }
+
+        .funky-heading {
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
+            /* Use a fun, kid-friendly font */
+            font-size: 3em;
+            /* Make the text larger */
+            color: #9aff63;
+            /* Use a bright color */
+            text-align: center;
+            /* Center the text */
+            text-shadow: 2px 2px 4px #000000;
+            /* Add a shadow for a 3D effect */
+        }
+
+        .title-image {
+            height: 2em;
+            /* Make the image the same height as the text */
+            vertical-align: middle;
+            /* Align the image with the middle of the text */
+            margin-right: 0.5em;
+            /* Add some space between the image and the text */
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .letter-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #ff6f61;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: #2c3e50;
+            /* Darker color for letters */
+            cursor: pointer;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            background-color: linear-gradient(45deg, #ff9d6c, #ff6f61);
+            /* Gradient background */
+            margin: 10px;
+            transition: transform 0.5s ease;
+        }
+
+        .letter-container:nth-child(odd) {
+            background-color: #ffadad;
+        }
+
+        .letter-container:nth-child(even) {
+            background-color: #ffd6a5;
+        }
+
+        .letter-container img {
+            width: 100%;
+            /* Make the image fill the container */
+            height: auto;
+            /* Keep the original aspect ratio */
+            border-radius: 50%;
+        }
+
+        /* CSS for smaller screens */
+        @media screen and (max-width: 600px) {
+            .letter-container {
+                width: 50%;
+                /* Assuming you want 2 letters in a row on smaller screens */
+            }
+        }
+
+        /* Animation for bouncing effect */
+        .bounce-animation {
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="funky-heading">
+        <img src="resources/alphabet-speaking.jpg" alt="Image description" class="title-image"> Alphabet Sounds
+    </h1>
+    <div class="row">
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/A.mp4', this)">
+            <img src="resources/images/A.png" alt="A">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/B.mp4', this)">
+            <img src="resources/images/B.png" alt="B">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/C.mp4', this)">
+            <img src="resources/images/C.png" alt="C">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/D.mp4', this)">
+            <img src="resources/images/D.png" alt="D">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/E.mp4', this)">
+            <img src="resources/images/E.png" alt="E">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/F.mp4', this)">
+            <img src="resources/images/F.png" alt="F">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/G.mp4', this)">
+            <img src="resources/images/G.png" alt="G">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/H.mp4', this)">
+            <img src="resources/images/H.png" alt="H">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/I.mp4', this)">
+            <img src="resources/images/I.png" alt="I">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/J.mp4', this)">
+            <img src="resources/images/J.png" alt="J">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/K.mp4', this)">
+            <img src="resources/images/K.png" alt="K">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/L.mp4', this)">
+            <img src="resources/images/L.png" alt="L">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/M.mp4', this)">
+            <img src="resources/images/M.png" alt="M">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/N.mp4', this)">
+            <img src="resources/images/N.png" alt="N">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/O.mp4', this)">
+            <img src="resources/images/O.png" alt="O">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/P.mp4', this)">
+            <img src="resources/images/P.png" alt="P">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/Q.mp4', this)">
+            <img src="resources/images/Q.png" alt="Q">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/R.mp4', this)">
+            <img src="resources/images/R.png" alt="R">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/S.mp4', this)">
+            <img src="resources/images/S.png" alt="S">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/T.mp4', this)">
+            <img src="resources/images/T.png" alt="T">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/U.mp4', this)">
+            <img src="resources/images/U.png" alt="U">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/V.mp4', this)">
+            <img src="resources/images/V.png" alt="V">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/W.mp4', this)">
+            <img src="resources/images/W.png" alt="W">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/X.mp4', this)">
+            <img src="resources/images/X.png" alt="X">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/Y.mp4', this)">
+            <img src="resources/images/Y.png" alt="Y">
+        </div>
+        <div class="letter-container" onclick="playAudioAndAnimate('./resources/sounds/Z.mp4', this)">
+            <img src="resources/images/Z.png" alt="Z">
+        </div>
+    </div>
+
+    <audio id="audio"></audio>
+
+    <script>
+        function playAudioAndAnimate(soundFile, element) {
+            var audio = document.getElementById("audio");
+            audio.src = soundFile;
+            audio.play();
+
+            // Stop bounce animation from all letter containers
+            var letterContainers = document.querySelectorAll('.letter-container');
+            letterContainers.forEach(function (container) {
+                container.classList.remove('bounce-animation');
+            });
+
+            // Add bounce animation to the clicked letter container
+            element.classList.add('bounce-animation');
+
+            // Stop bounce animation after sound finishes playing
+            audio.onended = function () {
+                element.classList.remove('bounce-animation');
+            };
+        }
+    </script>
+
+</body>
+
+</html>
